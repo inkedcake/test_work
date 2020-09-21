@@ -8,7 +8,7 @@ class Bootstrap
         $url = explode('/', $url);
 
         if(empty($url[0])) {
-            require 'Controllers/indexController.php';
+            require '../Controllers/indexController.php';
             $controller = new Index();
             $controller->index();
 
@@ -17,10 +17,6 @@ class Bootstrap
         $file = 'Controllers/'.$url[0].'Controller.php';
         if(file_exists($file)) {
             require $file;
-        } else {
-            require 'Controllers/errorsController.php';
-            $controller = new Errors;
-            return false;
         }
         $class_name = ucfirst($url[0]);
         $controller = new $class_name;
@@ -38,14 +34,5 @@ class Bootstrap
                 $controller->index();
             }
         }
-//        if(isset($url[2])) {
-//            $url1=ucfirst($url[1]);
-//            $controller->$url1($url[2]);
-//        } else {
-//            if(isset($url[1])) {
-//                $url1=ucfirst($url[1]);
-//                $controller->$url1();
-//            }
-//        }
     }
 }

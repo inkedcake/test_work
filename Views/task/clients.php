@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Add client</h1>
 
-    <form action="/dashboard/addClients" method="post" class="form-inline">
+    <form action="/task/addClients" method="post" class="form-inline">
         <div class="form-group">
             <input type="text" class="form-control mb-2 mr-sm-2" name="full_name" aria-describedby="full_name" placeholder="Enter full name">
         </div>

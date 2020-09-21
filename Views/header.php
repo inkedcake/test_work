@@ -10,18 +10,23 @@
 <nav class="navbar navbar-light bg-light ">
     <?php if (Session::get('loggedIn') == true){
     ?>
-    <a href="<?php echo URL.'dashboard'?>" class="<?php echo ($_SERVER['REQUEST_URI'] == '/dashboard') ? 'btn disabled':"";?>">
-        <button class="btn btn-outline-success m-2 " type="button">Cabinet</button>
+        <div class="d-inline-flex p-2">
+    <a href="<?php echo URL.'task'?>" class="btn <?php echo ($_SERVER['REQUEST_URI'] == '/task') ? 'disabled':"";?>">
+        <button class="btn btn-outline-success" type="button">Cabinet</button>
     </a>
-        <a href="<?php echo URL.'dashboard/clients'?>" class="<?php echo ($_SERVER['REQUEST_URI'] == '/dashboard/clients') ? 'btn disabled':"";?>">
-            <button class="btn btn-outline-success m-2 " type="button">Clients</button>
+        <a href="<?php echo URL.'calendar'?>" class="btn <?php echo ($_SERVER['REQUEST_URI'] == '/calendar') ? 'disabled':"";?>">
+            <button class="btn btn-outline-success p-2" type="button">Notes</button>
         </a>
+        <a href="<?php echo URL.'task/clients'?>" class="btn <?php echo ($_SERVER['REQUEST_URI'] == '/task/clients') ? ' disabled':"";?>">
+            <button class="btn btn-outline-success" type="button">Clients</button>
+        </a>
+        </div>
 <?php }?>
     <form class="form-inline d-flex justify-content-end">
 
 
         <?php if(Session::get('loggedIn') == true):?>
-            <a href="<?php echo URL.'dashboard/logout'?>">
+            <a href="<?php echo URL.'index/logout'?>">
                 <button class="btn btn-outline-warning m-2" type="button">Logout</button>
             </a>
         <?php else: ?>

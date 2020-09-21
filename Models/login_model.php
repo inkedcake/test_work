@@ -18,7 +18,7 @@ class Login_Model extends Model
             Session::init();
             Session::set('loggedIn', true);
             Session::set('manager_id', $data[0]['id']);
-            header('Location:../dashboard');
+            header('Location:../task');
         } else {
             header('Location:../login');
         }
